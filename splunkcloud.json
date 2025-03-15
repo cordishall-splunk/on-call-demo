@@ -1,0 +1,17 @@
+{
+    "ServiceNow_Integration": "true",
+    "monitoring_tool": "signalfx",
+    "vo_annotate.i.Chart Showing Alert": "https://example.com/chart",
+    "timestamp": "2025-02-27T15:25:00Z",
+    "SFX_aws_instance_id": "i-0fd21952ef5474ae5",
+    "entity_display_name": "AWS EC2: CPU utilization expected to reach the limit CH",
+    "message_type": "CRITICAL",
+    "rule": "AWS EC2: CPU utilization expected to reach the limit",
+    "vo_annotate.u.Signal Alert": "Critical",
+    "detector": "AWS EC2: CPU utilization expected to reach the limit",
+    "vo_annotate.u.Alert Details in SignalFx": "https://example.com/alert-details",
+    "entity_id": "AWS EC2: CPU utilization expected to reach the limit CH",
+    "state_message": "Critical",
+    "vo_orig.ServiceNowField_victorops_close_notes": "See Incident Activity",
+    "vo_annotate.u.SRE Dashboard": "https://example.com/sre-dashboard"
+}
