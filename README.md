@@ -1,11 +1,10 @@
 # VictorOps Alert Sender
 
-This Python script sends a POST request to a VictorOps endpoint. It is designed to facilitate integration with monitoring tools like SignalFx and to send alerts for AWS EC2 instances. The script uses command-line arguments for most of its configuration, except for the URL, which is read from an environment variable for enhanced security.
+This Python script sends a POST request to a Splunk On-Call endpoint. It is designed to simulate the integration with Splunk Observability and to send alerts for AWS EC2 instances. The script may be modified to customzie the content, monitoring tool, alert details, api key, routing key, etc to suit the needs of the demo.
 
 ## Features
 
 - Sends POST requests to a specified VictorOps endpoint.
-- Integrates with monitoring tools like SignalFx.
 - Configurable via command-line arguments.
 - Uses environment variables for sensitive information.
 
@@ -16,7 +15,7 @@ This Python script sends a POST request to a VictorOps endpoint. It is designed 
 
 ## Installation
 
-1. **Clone the repository** (if applicable) or download the script directly to your local machine.
+1. **Clone the repository** or download the script directly to your local machine.
 
 2. **Install the required Python package** using pip:
 
@@ -26,9 +25,16 @@ This Python script sends a POST request to a VictorOps endpoint. It is designed 
 
 ## Usage
 
-### Set Environment Variable
+### Set Environment Variables of required fields
 
-Before running the script, set the `VICTOROPS_URL` environment variable with your target URL:
+Before running the script, set the `ONCALL_URL` environment variable with your target URL. This can be found in Splunk On-Call under Integrations then selecting an integration point -- the integration may need to be enabled by admin or alert admin if not enabled already. Routing keys are found under Settings > Routing Keys. In the command below, `API_KEY` and `ROUTING_KEY` must be replaced with your values (there is no default value)
 
 ```bash
-export VICTOROPS_URL="https://alert.victorops.com/integrations/generic/20131114/alert/YOUR-ENDPOINT"
+export ONCALL_URL="https://alert.victorops.com/integrations/generic/20131114/alert/<API_KEY>/<ROUTING_KEY>"
+```
+Optionally, other fields may be set for consistent usage when running the script repeatedly. These fields _do_ have default values, and the script will work without assigning them yourself.
+
+```bash
+export ONCALL_TOOL="MY_MONITORING TOOL"
+export ONCALL_ENTITY_ID="MY_ENTITY_ID"
+```
